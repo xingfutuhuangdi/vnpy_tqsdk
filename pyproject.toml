@@ -4,7 +4,7 @@ dynamic = ["version"]
 description = "TQsdk datafeed for VeighNa quant trading framework."
 readme = "README.md"
 license = {text = "MIT"}
-authors = [{name = "Xiaoyou Chen", email = "xiaoyou.chen@mail.vnpy.com"}]
+authors = [{name = "Qiuchun", email = "362460803@qq.com"}]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
