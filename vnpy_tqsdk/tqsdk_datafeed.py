@@ -34,7 +34,8 @@ class TqsdkDatafeed(BaseDatafeed):
         """查询k线数据"""
         # 初始化API
         try:
-            api: TqApi = TqApi(auth=TqAuth(self.username, self.password))
+            api: TqApi = TqApi(backtest=TqBacktest(start_dt=req.start, end_dt=req.end),
+                               auth=TqAuth(self.username, self.password))
         except Exception:
             output(traceback.format_exc())
             return None
