@@ -51,14 +51,18 @@ class TqsdkDatafeed(BaseDatafeed):
 
         tq_symbol: str = f"{req.exchange.value}.{req.symbol}"
 
+        # quote = api.get_quote(tq_symbol)
+        # print("quote", quote)
+
         df: pd.DataFrame = api.get_kline_serial(
             symbol=tq_symbol,
             duration_seconds=INTERVAL_VT2TQ[req.interval]
         )
 
         try:
-            while api.wait_update():
-                if api.is_changing(df.iloc[-1], "datetime"):
+            while True:
+                api.wait_update()
+                if api.is_changing(df.iloc[-1]):
                     tp = df.iloc[-1]
                     bar: BarData = BarData(
                         symbol=req.symbol,

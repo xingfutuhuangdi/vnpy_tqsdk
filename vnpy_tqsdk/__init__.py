@@ -27,4 +27,4 @@ from .tqsdk_datafeed import TqsdkDatafeed as Datafeed
 __all__ = ["Datafeed"]
 
 
-__version__ = "3.8.6.5"
+__version__ = "3.8.6.6"
